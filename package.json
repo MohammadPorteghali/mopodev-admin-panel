@@ -1,11 +1,16 @@
 {
-  "name": "vue-skeleton",
+  "name": "admin-panel-skeleton",
   "version": "1.0.0",
+  "author": {
+    "name": "Mohammad Porteghali",
+    "email": "mohammadporteghali@gmail.com",
+    "url": "https://mopodev.ir/"
+  },
   "description": "VueJS Vuetify Vue Router Vuex - Basic Project Skeleton - Starter Web App. Written on JavaScript using async/await.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/sadr-group/fundamental-structures/vue/vue-skeleton-v1.git"
+    "url": "https://github.com/MohammadPorteghali/admin-panel"
   },
   "scripts": {
     "generate-build-version": "node generate-build-version",

@@ -19,7 +19,7 @@ const mutations = {
 }
 
 const state = {
-  appTitle: 'اپلیکیشن من',
+  appTitle: 'Admin panel skeleton',
   appVersion: packageJson.version
 }
 

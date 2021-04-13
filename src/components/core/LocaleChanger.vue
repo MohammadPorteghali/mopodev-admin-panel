@@ -45,16 +45,6 @@
                         class: 'btnEN'
                     },
                     {
-                        lang: 'es',
-                        flag: 'es',
-                        class: 'btnES'
-                    },
-                    {
-                        lang: 'cn',
-                        flag: 'cn',
-                        class: 'btnCN'
-                    },
-                    {
                         lang: 'fa',
                         flag: 'ir',
                         class: 'btnFA'
