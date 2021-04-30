@@ -33,3 +33,10 @@ export default {
 <style>
   @import "./assets/styles/global.scss";
 </style>
+
+// theme
+<style lang="scss">
+  .theme--dark.v-card {
+    background-color: var(--v-navbar-base) !important;
+  }
+</style>

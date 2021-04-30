@@ -96,6 +96,9 @@ export default {
   background: #838383;
   cursor: pointer;
 }
+.normal-flag {
+	transform: scale(.38) !important;
+}
 .v-list .flag {
 	width: 60px;
 }

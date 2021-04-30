@@ -2,14 +2,12 @@
   <div>
     <v-app-bar
       app
-      flat
       :clipped-right="$vuetify.rtl"
       :clipped-left="!$vuetify.rtl"
       color="navbar"
       dense
       class="app-bar"
       elevate-on-scroll
-      elevation="0"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer />
