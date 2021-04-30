@@ -89,49 +89,33 @@
       app
     >
       <v-list dense>
-        <v-list-group :value="false" prepend-icon="mdi-finance">
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title>{{ $t('menuItems.USERS') }}</v-list-item-title>
-            </v-list-item-content>
-          </template>
-          <v-list-item link @click="$router.push('/invoice')">
-            <v-list-item-action>
-              <v-icon>mdi-receipt</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>فاکتور‌ها</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+        <v-list-item to="users" link>
+          <v-list-item-action>
+            <v-icon>mdi-account-group-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ $t('menuItems.USERS') }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
-          <v-list-item link @click="$router.push('/payment')">
-            <v-list-item-action>
-              <v-icon>mdi-cash-plus</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>پرداخت‌ها</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+<!--        <v-list-group :value="false" prepend-icon="mdi-finance">-->
+<!--          <template v-slot:activator>-->
+<!--            <v-list-item-content>-->
+<!--              <v-list-item-title>{{ $t('menuItems.USERS') }}</v-list-item-title>-->
+<!--            </v-list-item-content>-->
+<!--          </template>-->
+<!--          <v-list-item link @click="$router.push('/invoice')">-->
+<!--            <v-list-item-action>-->
+<!--              <v-icon>mdi-receipt</v-icon>-->
+<!--            </v-list-item-action>-->
+<!--            <v-list-item-content>-->
+<!--              <v-list-item-title>فاکتور‌ها</v-list-item-title>-->
+<!--            </v-list-item-content>-->
+<!--          </v-list-item>-->
+<!--        </v-list-group>-->
 
-          <v-list-item link @click="$router.push('/bankAccount')" v-if="$role !== 'customer'">
-            <v-list-item-action>
-              <v-icon>mdi-bank</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>حساب‌های بانک</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item link @click="$router.push('/finance-report')">
-            <v-list-item-action>
-              <v-icon>mdi-file-chart</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>گزارش گیری</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
         <v-divider />
+
         <v-list-item @click="logout" link>
           <v-list-item-action>
             <v-icon>mdi-logout-variant</v-icon>

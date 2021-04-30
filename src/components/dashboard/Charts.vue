@@ -4,19 +4,19 @@
       <v-col cols="12" lg="4" class="mt-9">
         <v-card class="mx-auto">
           <v-sheet
-            class="v-sheet--offset mx-auto"
-            color="cyan"
-            elevation="12"
-            max-width="calc(100% - 32px)"
+              class="v-sheet--offset mx-auto"
+              color="cyan"
+              elevation="12"
+              max-width="calc(100% - 32px)"
           >
             <v-sparkline
-              auto-draw
-              height="130"
-              :labels="labels"
-              :value="value"
-              color="white"
-              line-width="2"
-              padding="16"
+                auto-draw
+                height="130"
+                :labels="labels"
+                :value="value"
+                color="white"
+                line-width="2"
+                padding="16"
             ></v-sparkline>
           </v-sheet>
 
@@ -33,21 +33,22 @@
       <v-col cols="12" lg="4" class="mt-9">
         <v-card class="mx-auto">
           <v-sheet
-            class="v-sheet--offset mx-auto"
-            color="#e91e63"
-            elevation="12"
-            max-width="calc(100% - 32px)"
+              class="v-sheet--offset mx-auto"
+              color="#e91e63"
+              elevation="12"
+              max-width="calc(100% - 32px)"
+              id="bars"
           >
             <v-sparkline
-              auto-draw
-              height="130"
-              type="bar"
-              auto-line-width
-              :labels="labels2"
-              :value="value2"
-              color="white"
-              line-width="2"
-              padding="16"
+                auto-draw
+                height="130"
+                type="bar"
+                auto-line-width
+                :labels="labels2"
+                :value="value2"
+                color="primary"
+                line-width="2"
+                padding="16"
             ></v-sparkline>
           </v-sheet>
 
@@ -64,19 +65,19 @@
       <v-col cols="12" lg="4" class="mt-9">
         <v-card class="mx-auto">
           <v-sheet
-            class="v-sheet--offset mx-auto"
-            color="#4cAf50"
-            elevation="12"
-            max-width="calc(100% - 32px)"
+              class="v-sheet--offset mx-auto"
+              color="#4cAf50"
+              elevation="12"
+              max-width="calc(100% - 32px)"
           >
             <v-sparkline
-              auto-draw
-              height="130"
-              :labels="labels3"
-              :value="value3"
-              color="white"
-              line-width="2"
-              padding="16"
+                auto-draw
+                height="130"
+                :labels="labels3"
+                :value="value3"
+                color="white"
+                line-width="2"
+                padding="16"
             ></v-sparkline>
           </v-sheet>
           <v-card-text class="pt-0">
@@ -94,8 +95,8 @@
       <v-card>
         <v-row>
           <v-col lg="5">
-            <pie-chart-dark />
-            <pie-chart-light />
+            <pie-chart-dark/>
+            <pie-chart-light/>
           </v-col>
           <v-col lg="7">
             <div class="title font-weight-light mb-2">User Registrations</div>
@@ -112,8 +113,8 @@
       <v-card>
         <v-row>
           <v-col lg="12">
-            <gantt-chart-dark />
-            <gantt-chart-light />
+            <gantt-chart-dark/>
+            <gantt-chart-light/>
           </v-col>
         </v-row>
       </v-card>
@@ -152,5 +153,10 @@ export default {
 .v-sheet--offset {
   top: -24px;
   position: relative;
+}
+
+#bars svg {
+  color: #FFFFFF !important;
+  caret-color: #FFFFFF !important;
 }
 </style>

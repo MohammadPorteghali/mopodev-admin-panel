@@ -3,7 +3,7 @@
     <div class="notfound-text">
       <b>404</b>
       <br>
-       صفحه مورد نظر وجود ندارد !
+      {{ $t('errors.404') }}
     </div>
     <!-- <img src="@/assets/images/logo.png" class="notfound-image" alt=""> -->
   </div>
