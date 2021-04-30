@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import '@/plugins/axios'
 import vuetify from '@/plugins/vuetify'
-import '@/plugins/veevalidate'
-import '@/plugins/common'
-import '@/plugins/googleAnalytics'
+import '@/plugins/global'
 import i18n from '@/plugins/i18n'
 import App from '@/App.vue'
 import router from '@/router'
@@ -17,18 +15,14 @@ Vue.config.productionTip = false
 const app = new Vue({
   router,
   store,
-  i18n,
   vuetify,
+  i18n,
   render: h => h(App),
   created() {
-    store.dispatch('setLocale', store.getters.locale)
-    if (store.getters.isTokenSet) {
-      store.dispatch('autoLogin')
-    }
+    store.commit('changeState', ['locale', store.state.locale])
   }
 }).$mount('#app')
 
-if (window.Cypress) {
-  // Only available during E2E tests
-  window.app = app
-}
+// change other locale
+i18n.locale = 'en'
+

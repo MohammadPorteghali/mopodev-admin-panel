@@ -31,12 +31,16 @@ This project is created to help other developers create a **basic VueJS app in a
 
 ## Demo
 
-A demo of this Frontend is located at: <https://http://mopodev.ir.com/admin-panel-skeleton>
+A demo of this Frontend is located at: <https://vue-demo.daniel-avellaneda.com>
 
 ### Login credentials
 
 email: `admin@admin.com`  
 password: `12345`
+
+Demo is also linked to a Node.js express.js MongoDB JWT REST API project that shows how this frontend can be integrated to an API.  
+Repo is here: <https://github.com/davellanedam/node-express-mongodb-jwt-rest-api-skeleton>  
+Running demo is here: <https://api-demo.daniel-avellaneda.com>
 
 ## How to install
 
@@ -106,6 +110,10 @@ npm run test:e2e
 ```bash
 npm run test:unit
 ```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Bugs or improvements
 

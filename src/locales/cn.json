@@ -47,6 +47,7 @@
         "MY_PROFILE": "个人中心",
         "SIGNUP": "注册",
         "LOGIN": "登录",
+        "USERS": "用户列表",
         "LOGOUT": "登出"
     },
     "adminItems": {

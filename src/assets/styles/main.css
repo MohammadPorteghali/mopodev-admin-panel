@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "IranYekan";
+  font-weight: 400;
+  src: url("~@/assets/fonts/Iran_Yekan/IranYekan-Regular.ttf")
+}
+@font-face {
+  font-family: "IranYekan";
+  font-weight: 500;
+  src: url("~@/assets/fonts/Iran_Yekan/IranYekan-Medium.ttf")
+}
+@font-face {
+  font-family: "IranYekan";
+  font-weight: 600;
+  src: url("~@/assets/fonts/Iran_Yekan/IranYekan-Bold.ttf") format("truetype")
+}
+@font-face {
+  font-family: "IranYekan";
+  font-weight: 700;
+  src: url("~@/assets/fonts/Iran_Yekan/IranYekan-ExtraBold.ttf") format("truetype")
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('~@/assets/fonts/Quicksand/Quicksand-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('~@/assets/fonts/Quicksand/Quicksand-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('~@/assets/fonts/Quicksand/Quicksand-SemiBold.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('~@/assets/fonts/Quicksand/Quicksand-Bold.ttf');
+  font-weight: 700;
+}

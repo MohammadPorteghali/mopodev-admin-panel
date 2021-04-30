@@ -47,6 +47,7 @@
         "MY_PROFILE": "Mi Perfil",
         "SIGNUP": "Registro",
         "LOGIN": "Ingresar",
+        "USERS": "Usuarios",
         "LOGOUT": "Salir"
     },
     "adminItems": {

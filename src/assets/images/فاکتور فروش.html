@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://trendu.net/trendPanel/invoice.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>فاکتور فروش</title>
+    <style>
+        @import url(/trendPanel/fonts/css/fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+
+        body {
+            direction: rtl;
+            font-family: IRANSans !important;
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        .size {
+            width: max-content;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+            float: right;
+        }
+
+        h1 {
+            display: inline-block;
+            font-size: 19px;
+            vertical-align: middle;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        h1 span {
+            display: block;
+            font-size: 12px;
+        }
+
+        .ddss {
+            float: left;
+            font-size: 13px;
+            text-align: right;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .ddss span {
+            display: block;
+        }
+
+        .mainfaktor {
+            border-radius: 1px;
+            border: 2px solid #000;
+            margin-top: 10px;
+        }
+
+        .mainfaktor h2 {
+            display: block;
+            font-size: 15px;
+            background: #cacbcb;
+            border-bottom: 1px solid #000;
+            border-top: 1px solid #000;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        .mainfaktor .bakelas {
+            display: block;
+            font-size: 15px;
+            background: #cacbcb;
+            border-bottom: 1px solid #000;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        .mainfaktor .khaadres {
+            font-size: 13px;
+            text-align: right;
+            padding: 10px;
+        }
+
+        .mainfaktor .khaadres .l {
+            float: left;
+            margin-left: 15px;
+        }
+
+        .mainfaktor .khaadres .l span {
+            font-weight: 400;
+        }
+
+        .mainfaktor .khaadres span {
+            font-weight: 400;
+        }
+
+        .mainfaktor .tbfaktor {
+            width: 99%;
+            margin: 5px;
+        }
+
+        .mainfaktor .tbfaktor td {
+            border: 1px solid #565656;
+            border-radius: 5px;
+            font-size: 13px;
+            padding: 3px 5px;
+        }
+
+        .mainfaktor .tbfaktor td span {
+            font-weight: 400;
+        }
+
+
+        .mainfaktor .tbfaktor th {
+            border: 1px solid #565656;
+            border-radius: 5px;
+            background: #cacbcb;
+            font-size: 14px;
+            padding: 3px 5px;
+        }
+
+        .mainfaktor .tbfaktor .rig {
+            text-align: right;
+        }
+
+        .mainfaktor .tozih {
+            font-size: 14px;
+            display: block;
+            position: absolute;
+            width: 50%;
+            border: 1px solid #000;
+            border-radius: 10px;
+            text-align: right;
+            margin: 0 8px;
+            padding: 10px;
+        }
+
+
+        .addres {
+            text-align: right;
+            display: block;
+            margin: 0 8px;
+            padding: 10px;
+            font-size: 13px;
+        }
+
+        .darked {
+            background: #cacbcb;
+        }
+
+        .halfed {
+            width: 50%;
+        }
+
+        .left-half {
+            float: left;
+            width: 50%;
+        }
+
+        .right-half {
+            float: left;
+            width: 50%;
+        }
+
+        .bolder {
+            font-weight: 500;
+        }
+
+        .bolderx {
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+<div class="size">
+    <h1 class="bolder">صورتحساب فروش کالا و خدمات</h1>
+    <div class="ddss">
+        <span>شماره : ۱۲۳</span>
+        <span>تاریخ : ۱۴۰۰/۰۱/۰۱</span>
+    </div>
+    <div class="mainfaktor">
+        <h2 class="bakelas">مشخصات فروشنده</h2>
+        <div class="khaadres">
+            <div class="l">
+                <h3>شماره تلفن/موبایل : <span>۰۲۱۸۸۰۶۵۰۱۶</span></h3>
+                <h3>کدپستی : <span>۱۴۳۴۹۳۳۷۹۳</span></h3>
+                <h3>شناسه ملی : <span>۱۴۰۰۹۳۸۱۶۴۰</span></h3>
+            </div>
+            <div class="r">
+                <h3>نام شخص حقیقی/حقوقی: <span>ترند سازان خلاق</span></h3>
+                <h3>شماره اقتصادی: <span>۴۱۱۶۶۶۸۸۷۷۳۵</span></h3>
+                <h3>نشانی: <span>تهران، یوسف‌آباد، پلاک ۴۴۳، طبقه ۳</span></h3>
+            </div>
+        </div>
+        <h2>مشخصات خریدار</h2>
+        <div class="khaadres">
+            <div class="l">
+                <h3>شماره تلفن/موبایل : <span>۰۲۱۸۳۸۴۹۰۰۰</span></h3>
+                <h3>کدپستی : <span>۱۵۹۹۹۴۵۵۳۷</span></h3>
+                <h3>شناسه ملی : <span>۱۰۱۰۲۷۵۷۶۹۵</span></h3>
+            </div>
+            <div class="r">
+                <h3>نام شخص حقیقی/حقوقی: <span>شرکت مدیریت صنعت شوینده توسعه صنایع بهشهر</span></h3>
+                <h3>شماره اقتصادی: <span>۴۱۱۱۴۵۴۸۳۹۸۹</span></h3>
+                <h3>نشانی: <span>تهران، انقلاب اسلامی، خیابان شهید سپهبدقرنی، میدان فردوسی، پلاک ۲۱، ساختمان شهد، طبقه
+                    پنجم</span></h3>
+            </div>
+        </div>
+        <table class="tbfaktor">
+            <tbody><tr>
+                <th class="bolderx">ردیف</th>
+                <th class="bolderx" width="80px">کد کالا</th>
+                <th class="bolderx" width="220px">شرح کالا/خدمت</th>
+                <th class="bolderx" width="80px">تعداد</th>
+                <th class="bolderx" width="80px">مبلغ واحد</th>
+                <th class="bolderx" width="100px">قیمت کل</th>
+                <th class="bolderx" width="100px">مبلغ تخفیف</th>
+                <th class="bolderx" width="100px">مبلغ پس از تخفیف</th>
+                <th class="bolderx" width="100px">مبلغ مالیات و عوارض</th>
+                <th class="bolderx" width="100px">مبلغ پس از مالیات و عوارض</th>
+                <th class="bolderx" width="100px">مبلغ کل (ريال)</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>299</td>
+                <td class="rig">انتشار محتوا در فضای مجازی</td>
+                <td>1,000</td>
+                <td>2,000</td>
+                <td>2,000,000</td>
+                <td>100,000</td>
+                <td>1,900,000</td>
+                <td>171,000</td>
+                <td>2,071,000</td>
+                <td>2,071,000</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>350</td>
+                <td class="rig">تولید محتوا در تلگرام</td>
+                <td>1</td>
+                <td>5,000,000</td>
+                <td>5,000,000</td>
+                <td>500,000</td>
+                <td>4,500,000</td>
+                <td>450,000</td>
+                <td>4,950,000</td>
+                <td>4,950,000</td>
+            </tr>
+
+            <tr>
+                <td colspan="3" class="darked">جمع</td>
+                <td>3</td>
+                <td class="darked"></td>
+                <td>7,000,000</td>
+                <td>600,000</td>
+                <td>6,400,000</td>
+                <td>621,000</td>
+                <td>7,021,000</td>
+                <td>7,021,000</td>
+            </tr>
+
+            <tr>
+                <td colspan="11" class="rig">جمع به حروف: <span>هفت میلیون و بیست و یک هزار ریال</span></td>
+            </tr>
+            <tr>
+                <td colspan="9" class="rig">مالیات و عوارض: <span>۹ درصد</span></td>
+                <td colspan="2" class="rig">نوع پرداخت: <span>نقدی</span></td>
+            </tr>
+            <tr>
+                <td colspan="11" class="rig">اطلاعات بانکی فروشنده: <span>بانک رسالت - شرکت ترند سازان خلاق - حساب
+                    ۱۰.۸۱۲۷۰۸۱.۱ - شبا ۸۳۰۷۰۰۰۱۰۰۰۱۲۸۱۲۷۸۰۱۰۰۱</span>
+                </td>
+            </tr>
+
+
+        </tbody></table>
+
+        <div>
+            <div class="right-half">مهر و امضا خریدار:</div>
+            <div class="left-half">مهر و امضا فروشنده:</div>
+            <br><br><br><br><br>
+        </div>
+
+
+    </div>
+</div>
+
+</body></html>

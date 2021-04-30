@@ -1,16 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import modules from '@/store/modules'
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
-  modules: {
-    ...modules
+  state: {
+    locale: 'en'
+  },
+  mutations: {
+    changeState(state, data) {
+      state[data[0]] = data[1]
+    },
+    switchState(state, data) {
+      state[data] = !state[data]
+    },
+    pushToState(state, data) {
+      state[data[0]] = [...state[data[0]], ...data[1]]
+    }
   }
 })
-
-if (window.Cypress) {
-  // Only available during E2E tests
-  window.__store__ = store
-}

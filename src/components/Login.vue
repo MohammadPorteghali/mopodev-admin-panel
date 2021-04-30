@@ -1,207 +1,90 @@
 <template>
-  <div class="page">
-    <v-card class="login-card">
-      <h2 class="card-title">{{ $t('login.TITLE') }}</h2>
-      <v-text-field
-        class="card-field"
-        v-model="email"
-        :rules="[rules.required, rules.email]"
-        :label="$t('login.EMAIL')"
-        color="primary"
-      ></v-text-field>
-      <v-text-field
-        class="card-field"
-        color="primary"
-        :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-        :rules="[rules.required, rules.min]"
-        :type="show1 ? 'text' : 'password'"
-        name="input-10-1"
-        :label="$t('login.PASSWORD')"
-        hint="At least 8 characters"
-        counter
-        @click:append="show1 = !show1"
-      ></v-text-field>
-      <v-checkbox
-        small-chips
-        class="checkbox-card"
-        :label="$t('login.REMEMBER_PASSWORD')"
-        color="primary"
-        hide-details
-      ></v-checkbox>
-      <!--<p class="forget-password" to="" @click="">Forget Password ?</p>-->
-      <p style="text-align: center; margin-bottom: 0">
-        <router-link style="text-decoration: none" to="/dashboard">
-          <v-btn
-            class="ma-2 login-button"
-            :loading="loading4"
-            :disabled="loading4"
-            color="primary"
-            @click="loader = 'loading4'"
-          >
-            {{ $t('login.TITLE') }}
-            <template v-slot:loader>
-              <span class="custom-loader">
-                <v-icon light>mdi-cached</v-icon>
-              </span>
-            </template>
-          </v-btn>
-        </router-link>
-      </p>
-      <p
-        style="text-align: center;cursor: pointer; margin-top: 5px"
-        color="primary"
-        dark
-        @click.stop="dialog = true"
-      >{{ $t('login.FORGOT_PASSWORD') }}</p>
-
-      <v-dialog v-model="dialog" max-width="320">
-        <v-card>
-          <v-card-title class="headline">{{ $t('login.FORGOT_PASSWORD') }}</v-card-title>
-          <v-text-field
-            class="card-field"
-            v-model="email"
-            :rules="[rules.required, rules.email]"
-            :label="$t('login.EMAIL')"
-            color="primary"
-          ></v-text-field>
-          <v-card-text style="text-align: center">{{ $t('login.SEND_EMAIL') }}</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <p style="text-align: center">
-              <v-btn color="green darken-1" text @click="dialog = false">{{ $t('login.SEND') }}</v-btn>
-            </p>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-      <router-link to="/signup" style="text-decoration: none">
-        <p class="question">{{ $t('login.DONT_HAVE-ACCOUNT') }}</p>
-      </router-link>
-      <login-locale-changer />
-    </v-card>
+  <div class="full-height">
+    <v-row justify="center" class="full-height">
+      <v-col cols="10" xl="4" lg="4" md="6" sm="6" class="login-container ma-auto pa-7">
+        <v-row justify="center" class="mb-2 mt-1">
+          <h3 class="login-title mb-9">Login</h3>
+        </v-row>
+        <v-text-field
+          label="E-mail address"
+          v-model="email"
+          append-icon="mdi-email-outline"
+          type="text"
+          :rules="[rules.emailRequired]"
+          required
+          autofocus
+        ></v-text-field>
+        <v-text-field
+          label="Password"
+          v-model="password"
+          append-icon="mdi-lock-outline"
+          type="password"
+          :rules="[rules.passwordRequired]"
+          required
+          @keypress.enter="submitCode"
+        ></v-text-field>
+        <v-row class="mt-5">
+          <v-col>
+            <v-btn
+              color="primary"
+              class="px-5"
+              @click="login"
+              :disabled="!email || !password"
+              :block="$vuetify.breakpoint.xs"
+            >
+              Login
+            </v-btn>
+          </v-col>
+          <v-spacer v-if="!$vuetify.breakpoint.xs" />
+          <v-col>
+            <v-btn text color="primary" :block="$vuetify.breakpoint.xs">Forget Password</v-btn>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+    <v-snackbar v-model="snackbar" :color="snackbarColor" top left>{{ errorText }}</v-snackbar>
   </div>
 </template>
 
 <script>
-import LoginLocaleChanger from './core/LoginLocaleChanger'
+import Axios from "axios";
+import Vue from 'vue'
+
 export default {
-  components: {
-    LoginLocaleChanger
-  },
-  data () {
+  data: function () {
     return {
-      title: 'Preliminary report',
-      email: '',
-      dialog: false,
-      show1: false,
-      loader: null,
-      loading4: false,
+      snackbar: false,
+      snackbarColor: "",
+      errorText: '',
+      loading: false,
+      step: 'phoneNumber',
+      email: 'test@test.com',
+      password: 'test',
       rules: {
-        min: v => v.length >= 8 || 'Min 8 characters',
-        emailMatch: () => ('The email and password you entered don\'t match'),
-        required: value => !!value || 'Required.',
-        counter: value => value.length <= 20 || 'Max 20 characters',
-        email: value => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Invalid e-mail.'
-        },
-      },
-    }
+        emailRequired: value => !!value || 'E-mail is required',
+        passwordRequired: value => !!value || 'Password is required'
+      }
+    };
   },
-  watch: {
-    loader () {
-      const l = this.loader
-      this[l] = !this[l]
-      setTimeout(() => (this[l] = false), 3000)
-      this.loader = null
-    },
+  methods: {
+    login() {
+      this.$router.push({name: 'charts'})
+    }
   },
 }
 </script>
 
 <style scoped>
-.page {
-  width: 100%;
+.full-height {
   height: 100%;
-  background-size: cover;
-  background-image: url('http://www.hdwallpaperspulse.com/wp-content/uploads/2017/03/06/black-simple-background-hd.jpg');
 }
-
-@media screen and (max-width: 500px) {
-  .page {
-    width: 100%;
-    height: 100vh;
-  }
-  .login-card {
-    margin: 2rem auto !important;
-    width: 60vh !important;
-    height: 75vh;
-  }
+.login-container {
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 0 0 6px #dadcde;
 }
-.login-card {
-  margin: 5rem auto;
-  width: 60vh;
-  height: auto;
-  padding-bottom: 20px;
-}
-.card-title {
-  padding-top: 2rem;
-  text-align: center;
-  font-weight: bolder;
-}
-.card-field {
-  width: 70%;
-  margin: 10px auto 0;
-}
-.checkbox-card {
-  margin-left: 3.5rem;
-  margin-right: 3.5rem;
-}
-.custom-loader {
-  animation: loader 1s infinite;
-  display: flex;
-}
-@-moz-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.login-button {
-  margin-top: 5rem !important;
-}
-.question {
-  text-align: center;
-  color: rgb(79, 195, 247);
-  margin: 0;
-}
-.forget-password {
-  margin-left: 3.7rem;
-  margin-top: 5px;
+.login-title {
+  font-weight: 600;
+  font-size: 1.6em;
 }
 </style>
