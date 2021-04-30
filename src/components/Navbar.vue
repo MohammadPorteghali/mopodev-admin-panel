@@ -13,7 +13,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer />
-      <div class="logo">vuetify admin panel</div>
+      <div class="logo">mopodev admin panel</div>
       <v-spacer />
       <v-toolbar-items>
         <v-btn @click="$vuetify.theme.dark = !$vuetify.theme.dark" text small>
@@ -148,7 +148,7 @@
 </template>
 
 <script>
-import LocaleChanger from '../components/LocaleChanger.vue'
+import LocaleChanger from './LocaleChanger.vue'
 export default {
   components: { LocaleChanger },
   data: () => ({

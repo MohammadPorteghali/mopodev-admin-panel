@@ -1,7 +1,7 @@
 {
-  "name": "edutech-panel",
+  "name": "mopodev-admin-panel",
   "version": "1.0.0",
-  "description": "Edutech Panel",
+  "description": "mopodev admin panel with vuetify",
   "license": "MIT",
   "scripts": {
     "generate-build-version": "node generate-build-version",

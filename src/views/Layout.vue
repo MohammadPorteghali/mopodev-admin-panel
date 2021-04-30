@@ -1,15 +1,18 @@
 <template>
   <div>
-    <Navbar />
+    <navbar />
+    <new-footer />
   </div>
 </template>
 
 <script>
-import Navbar from '@/views/Navbar'
+import Navbar from '@/components/Navbar'
+import newFooter from '../components/Footer.vue'
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    newFooter,
   },
 }
 </script>

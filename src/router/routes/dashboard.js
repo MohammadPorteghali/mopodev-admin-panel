@@ -7,6 +7,6 @@ export default [
       component: () => import('@/components/dashboard/Charts.vue')
     }],
     component: () =>
-      import('@/views/Dashboard.vue')
+      import('@/views/Layout.vue')
   }
 ]
