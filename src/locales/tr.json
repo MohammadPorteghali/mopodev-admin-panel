@@ -94,7 +94,9 @@
       "VERIFIED": "Doğrulandı",
       "CITY": "Şehir",
       "COUNTRY": "Ülke",
-      "PHONE": "Telefon"
+      "PHONE": "Telefon",
+      "ACTIVITY": "Aktivite",
+      "GROUP": "Grup"
     },
     "PASSWORD": "Password",
     "CONFIRM_PASSWORD": "Confirm Password"

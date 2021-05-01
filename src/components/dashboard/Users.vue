@@ -7,7 +7,7 @@
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-col>
-      <v-col cols="12" xl="4" lg="4" md="4">
+      <v-col cols="12" xl="4" lg="4" md="4" sm="4">
         <v-text-field
             v-model="searchKey"
             append-icon="mdi-magnify"
@@ -17,6 +17,20 @@
             single-line
             hide-details
             dense
+        />
+      </v-col>
+      <v-col cols="12" xl="2" lg="2" md="2" sm="4">
+        <v-combobox
+            v-model="filterActivity"
+            @change="filterTable"
+            :items="activities"
+            item-text="title"
+            item-value="value"
+            :label="$t('users.headers.ACTIVITY')"
+            multiple
+            outlined
+            dense
+            hide-details
         />
       </v-col>
     </v-row>
@@ -106,8 +120,8 @@
         <v-card-text>
           <v-container>
             <v-row>
-              <v-col cols="12" sm="6" md="4">
-                Are you sure to delete user
+              <v-col>
+                Are you sure to delete user?
               </v-col>
             </v-row>
           </v-container>
@@ -117,7 +131,7 @@
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="deleteDialog = false">{{ $t('dataTable.CANCEL') }}
           </v-btn>
-          <v-btn color="blue darken-1" text @click="deleteUser">{{ $t('dataTable.DELETE') }}</v-btn>
+          <v-btn color="danger" dark @click="deleteUser">{{ $t('dataTable.DELETE') }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -178,7 +192,47 @@ export default {
         group: 'Google',
         activity: 'inactive'
       }
-    ]  }),
+    ],
+    unchangedMembers: [
+      {
+        name: 'John',
+        role: 'CEO',
+        group: 'Apple',
+        activity: 'active'
+      },
+      {
+        name: 'Max',
+        role: 'CEO',
+        group: 'Amazon',
+        activity: 'active'
+      },
+      {
+        name: 'Harry',
+        role: 'Web Developer',
+        group: 'Google',
+        activity: 'inactive'
+      },
+      {
+        name: 'Louis',
+        role: 'Android Developer',
+        group: 'Facebook',
+        activity: 'inactive'
+      },
+      {
+        name: 'Danny',
+        role: 'Web Developer',
+        group: 'Google',
+        activity: 'active'
+      },
+      {
+        name: 'Sara',
+        role: 'CEO',
+        group: 'Google',
+        activity: 'inactive'
+      }
+    ],
+    filterActivity: ''
+  }),
 
   computed: {
     headers() {
@@ -210,15 +264,14 @@ export default {
       )
       this.editDialog = true
     },
-
     saveEdit() {
-      this.members[this.selectedItemIndex] = this.selectedItem
-      console.log('s' ,this.selectedItem)
+      this.unchangedMembers[this.selectedItemIndex] = this.selectedItem
+      console.log('s', this.selectedItem)
       console.log('m', this.members[this.selectedItemIndex])
       console.log('this.members', this.members)
       this.editDialog = false
+      return this.members = [...this.unchangedMembers]
     },
-
     submitNewItem() {
       this.members.push({
         name: this.newItem.name,
@@ -234,19 +287,34 @@ export default {
       }
       this.newDialog = false;
     },
-
     deleteItem(item) {
-      this.deleteIndex = this.members.indexOf(item);
+      this.selectedDeleteItem = item;
       this.deleteDialog = true
     },
-
     deleteUser() {
-      this.members.splice(this.deleteIndex);
+      this.members = this.members.filter(
+          e => {
+            if (e.name === this.selectedDeleteItem.name) return false
+            else return true
+          }
+      )
+      this.deleteDialog = false;
     },
-
     getColor(activity) {
       if (activity === 'active') return 'success';
       else return 'danger'
+    },
+    filterTable() {
+      if (this.filterActivity.length === 0) {
+        return this.members = this.unchangedMembers
+      } else {
+        return this.members = this.unchangedMembers.filter(
+            e => {
+              if (this.filterActivity.length > 0 && !this.filterActivity.includes(e.activity.toLowerCase())) return false
+              return true
+            }
+        )
+      }
     },
   },
 }
