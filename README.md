@@ -9,8 +9,7 @@ This is a basic VueJs, Vuetify, Vue Router and Vuex skeleton written on JavaScri
 -   Vue router
 -   Vuex
 -   i18n ready.
--   Ready to add to home screen in iOS and Chrome, checks if there´s an app update every 2 hours and reloads page (When a web app is added as stand alone there´s no reload button in the browser so new .js files from a new build never get loaded)
--   Login.
+-   PWA
 -   Users admin area with CRUD operations.
 
 ## Demo
