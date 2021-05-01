@@ -52,8 +52,8 @@
     "USERS": "Kullanıcılar",
     "ADD_USER": "Add User",
     "USER_MANAGEMENT": "User Management",
-    "ACCOUNT_SETTING": "Account Setting",
-    "DASHBOARD": "Dashboard"
+    "ACCOUNT_SETTING": "Hesap ayarları",
+    "DASHBOARD": "Gösterge Paneli"
   },
   "adminItems": {
     "ADMIN": "Admin",

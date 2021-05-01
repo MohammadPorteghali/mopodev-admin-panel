@@ -48,7 +48,9 @@
     "SIGNUP": "注册",
     "LOGIN": "登录",
     "USERS": "用户列表",
-    "LOGOUT": "登出"
+    "LOGOUT": "登出",
+    "ACCOUNT_SETTING": "账户设置",
+    "DASHBOARD": "仪表盘"
   },
   "adminItems": {
     "ADMIN": "管理",

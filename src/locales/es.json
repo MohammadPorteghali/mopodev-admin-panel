@@ -48,7 +48,9 @@
     "SIGNUP": "Registro",
     "LOGIN": "Ingresar",
     "USERS": "Usuarios",
-    "LOGOUT": "Salir"
+    "LOGOUT": "Salir",
+    "ACCOUNT_SETTING": "Configuración de cuenta",
+    "DASHBOARD": "Tablero"
   },
   "adminItems": {
     "ADMIN": "Admin",

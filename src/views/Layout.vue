@@ -1,6 +1,12 @@
 <template>
   <div>
     <navbar />
+    <v-main>
+      <v-divider />
+      <div class="pa-3">
+        <router-view />
+      </div>
+    </v-main>
     <new-footer />
   </div>
 </template>

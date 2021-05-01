@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row class="ma-5">
+    <v-row class="my-5">
       <v-col cols="12" lg="4" class="mt-9">
         <v-card class="mx-auto">
           <v-sheet
@@ -91,7 +91,7 @@
       </v-col>
     </v-row>
 
-    <div class="ma-7">
+    <div class="my-7">
       <v-card>
         <v-row>
           <v-col lg="5">
@@ -109,7 +109,7 @@
       </v-card>
     </div>
 
-    <div class="ma-7">
+    <div class="my-7">
       <v-card>
         <v-row>
           <v-col lg="12">
