@@ -26,7 +26,7 @@
         <!--        >-->
         <!--          <v-icon>mdi-magnify</v-icon>-->
         <!--        </v-btn>-->
-        <v-btn v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg || $vuetify.breakpoint.xl" text small to="/charts">
+        <v-btn v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg || $vuetify.breakpoint.xl" text small to="/dashboard">
           <v-icon>mdi-view-dashboard</v-icon>
         </v-btn>
         <v-menu
@@ -56,17 +56,13 @@
               </v-list-item-avatar>
             </v-list-item>
             <v-divider></v-divider>
-            <v-list-item @click to="/profile">
-              <v-list-item-title>Profile</v-list-item-title>
+            <v-list-item @click>
+              <v-list-item-title>{{ $t('menuItems.PROFILE') }}</v-list-item-title>
               <v-icon>mdi-account-outline</v-icon>
-            </v-list-item>
-            <v-list-item @click to="/profile">
-              <v-list-item-title>Account setting</v-list-item-title>
-              <v-icon>mdi-account-cog-outline</v-icon>
             </v-list-item>
             <v-divider></v-divider>
             <v-list-item>
-              <v-btn small dark color="danger">Logout</v-btn>
+              <v-btn small dark color="danger" @click="logout">{{ $t('menuItems.LOGOUT') }}</v-btn>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -95,11 +91,9 @@
             </template>
             <v-list-item link>
               <v-list-item-icon>
-                <v-icon medium>mdi-account-cog-outline</v-icon>
+                <v-icon medium>mdi-account-outline</v-icon>
               </v-list-item-icon>
-              <router-link to="/profile">
-                <v-list-item-title style="font-size: 12px">{{ $t('menuItems.ACCOUNT_SETTING') }}</v-list-item-title>
-              </router-link>
+                <v-list-item-title style="font-size: 12px">{{ $t('menuItems.PROFILE') }}</v-list-item-title>
             </v-list-item>
           </v-list-group>
         </v-list>
@@ -107,7 +101,7 @@
 
       <v-list dense>
 
-        <v-list-item to="charts" link v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm">
+        <v-list-item to="dashboard" link v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>

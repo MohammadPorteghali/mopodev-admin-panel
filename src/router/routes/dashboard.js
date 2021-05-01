@@ -3,14 +3,18 @@ export default [
     path: '',
     children: [
       {
-        path: '/charts',
-        name: 'charts',
-        component: () => import('@/components/dashboard/Charts.vue')
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import('@/components/dashboard/Dashboard.vue')
       },
       {
         path: '/users',
         name: 'users',
         component: () => import('@/components/dashboard/Users.vue')
+      },{
+        path: '/profile',
+        name: 'profile',
+        component: () => import('@/components/dashboard/Profile.vue')
       },
     ],
     component: () =>

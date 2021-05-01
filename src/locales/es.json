@@ -42,6 +42,7 @@
     "CREATOR": "Me"
   },
   "menuItems": {
+    "PROFILE": "Perfil",
     "HOME": "Inicio",
     "ABOUT": "Acerca",
     "MY_PROFILE": "Mi Perfil",

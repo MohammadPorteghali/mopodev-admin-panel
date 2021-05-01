@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     login() {
-      this.$router.push({name: 'charts'})
+      this.$router.push({name: 'dashboard'})
     }
   },
 }
